@@ -24,12 +24,15 @@
                     <label for="Department">Department</label>
                       <asp:TextBox ID="TextDepartment" runat="server" class="form-control" placeholder="Enter Department"></asp:TextBox>
                   </div>
-                 <asp:Button type="submit" class="btn btn-primary" ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" Width="90px" />
+                 <div class="row">
+                     <div class="col-md-4">
+                        <asp:Button type="submit" class="btn btn-primary" ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" Width="90px" />
+                     </div>
+                     <div class="col-md-8" style="margin-top: 8px">
+                        <asp:Label ID="lblSuccessMessage" Visible="false" runat="server" CssClass="alert alert-success" ForeColor="Green" Text=""></asp:Label>
+                     </div>
+                 </div>
             </div>
-            
-                 <asp:Label ID="lblSuccessMessage" Visible="false" runat="server" CssClass="alert alert-success" ForeColor="Green" Text=""></asp:Label>
-            
-           
         </div> 
          <div class="col-md-4">
 
@@ -103,38 +106,24 @@
                         </asp:TemplateField>--%>
                     </Columns>
                 </asp:GridView>
-               <%-- <asp:GridView ID="gvEployee" class="table table-striped" runat="server" Height="194px" Width="100%" HeaderStyle-BackColor="#3AC0F2" AutoGenerateColumns="false" HeaderStyle-ForeColor="White">
-                    <Columns>
-                        <asp:BoundField DataField ="" HeaderText="SI. No"/>
-                        <asp:BoundField DataField ="EmployeeName" HeaderText="Employee Name"/>
-                        <asp:BoundField DataField ="Salary" HeaderText="Salary"/>
-                        <asp:BoundField DataField ="Department" HeaderText="Department"/>
-                        <asp:TemplateField HeaderText="Actions" ItemStyle-Width="150px">
-                            <ItemTemplate>
-                                <asp:LinkButton ID="EditIconButoon" runat="server" CommandArgument='<%# Eval("EmployeeId") %>' OnClick="btnEdit_Click" class="btn btn-success"><i class="fas fa-edit">Edit</i></asp:LinkButton>
-                                <asp:LinkButton ID="DeleteIconButoon" runat="server" CommandArgument='<%# Eval("EmployeeId") %>' OnClick="btnDelete_Click"  class="btn btn-danger"><i class="far fa-trash-alt">Delete</i></asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>--%>
             </table>
         </div>
         <div class="col-md-2" style="left: 3px; top: 62px">
             <asp:Button ID="report" runat="server" Text="Employee Report" OnClick="report_Click" />
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="" ClientIDMode="AutoID" Height="326px" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226" style="margin-top: 70px; margin-left: 179px;" Width="831px">
-                <LocalReport ReportPath="EmployeeReport.rdlc">
-                    <DataSources>
-                        <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
-                    </DataSources>
-                </LocalReport>
-            </rsweb:ReportViewer>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="FirstDemoApp.DataSet1TableAdapters.EmployeesTableAdapter"></asp:ObjectDataSource>
         </div>
     </div>
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CustomerDBConnectionString2 %>" SelectCommand="SELECT * FROM [Customers]"></asp:SqlDataSource>
+        <div class="col-md-8" style="margin-top: 100px">
+             <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="" ClientIDMode="AutoID" Height="326px" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226" Width="735px">
+                <%--<LocalReport ReportPath="EmployeeReport.rdlc">
+                    <DataSources>
+                        <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                    </DataSources>
+                </LocalReport>--%>
+            </rsweb:ReportViewer>
+            <%--<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="FirstDemoApp.DataSet1TableAdapters.EmployeesTableAdapter"></asp:ObjectDataSource>--%>
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CustomerDBConnectionString2 %>" SelectCommand="SELECT * FROM [Customers]"></asp:SqlDataSource>--%>
         </div>
         <div class="col-md-2"></div>
     </div>

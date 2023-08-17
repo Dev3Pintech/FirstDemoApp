@@ -18,8 +18,8 @@ namespace FirstDemoApp
         {
             if (!IsPostBack)
             {
-                //btnDelete.Enabled = false;
                 EmployeeTableGridView();
+                Clear();
             }
         }
 
@@ -172,7 +172,7 @@ namespace FirstDemoApp
             Da.Fill(dtbl);
             sqlcon.Close();
             EmployeeTableGridView();
-            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Are you sure you want delete this item?');", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Are you sure you want to delete this item?');", true);
         }
 
         protected void report_Click(object sender, EventArgs e)
@@ -186,10 +186,10 @@ namespace FirstDemoApp
             sqlcon.Close();
 
             ReportViewer1.LocalReport.DataSources.Clear();
-            ReportDataSource source = new ReportDataSource("DataSet1", sqlcon);
+            ReportDataSource source = new ReportDataSource("DataSet1", dtbl);
             ReportViewer1.LocalReport.ReportPath = "EmployeeReport.rdlc";
             ReportViewer1.LocalReport.DataSources.Add(source);
-            //ReportViewer1.ReportRefresh();
+            ReportViewer1.LocalReport.Refresh();
         }
     }
 }

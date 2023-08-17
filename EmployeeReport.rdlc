@@ -340,6 +340,7 @@
                               <Value>Total</Value>
                               <Style>
                                 <FontFamily>cambria</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -372,6 +373,7 @@
                               <Value>=Sum(CDbl(Fields!Salary.Value))</Value>
                               <Style>
                                 <FontFamily>cambria</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
